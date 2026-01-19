@@ -4,17 +4,16 @@ const form = document.querySelector('#contact-form')
 form.addEventListener('submit', e => {
   e.preventDefault()
   fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-    .then(response => alert("ধন্যবাদ! আপনার মেসেজটি সফলভাবে পাঠানো হয়েছে।"))
+    .then(response => alert("Thanks! Message has been successfully sent."))
     .catch(error => console.error('Error!', error.message))
 })
 
-// এই ফাংশনটি ইমেইল ঠিক আছে কি না তা পরীক্ষা করে
 function validateEmail(email) {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(email);
 }
 
-// এটিই হলো 'Unit Test'
+
 function runTests() {
     const testEmail = "test@example.com";
     if (validateEmail(testEmail)) {
@@ -24,4 +23,5 @@ function runTests() {
     }
 }
 runTests();
+
 
